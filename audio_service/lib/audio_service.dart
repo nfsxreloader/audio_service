@@ -1232,7 +1232,6 @@ class AudioService {
   }
 
   static Future<String?> _loadArtwork(MediaItem mediaItem) async {
-    try {
       final artUri = mediaItem.artUri;
       if (artUri != null) {
         if (artUri.scheme == 'file') {
@@ -1246,12 +1245,6 @@ class AudioService {
           return file.path;
         }
       }
-    } catch (e, st) {
-      // TODO: handle this somehow?
-      // ignore: avoid_print
-      print('Error loading artUri: $e\n$st');
-    }
-    return null;
   }
 
   // DEPRECATED members
